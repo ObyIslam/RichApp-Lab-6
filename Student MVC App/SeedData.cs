@@ -18,15 +18,21 @@ namespace Student_MVC_App
                 return;   // DB has already been seeded
             }
 
-            context.Students.AddRange(
-                new Student("Igor Kups", 20, "Igorkups24@gmail.com"),
-                new Student("Alice Johnson", 22, "alice.johnson@example.com")
-            );
+            var student1 = new Student("Igor Kups", 20, "Igorkups24@gmail.com");
+            var student2 = new Student("Alice Johnson", 22, "alice.johnson@example.com");
 
-            context.Courses.AddRange(
-                new Course("Programming", "Computing", "Oby Islam"),
-                new Course("Data Structures", "Computer Science", "John Smith")
-            );
+ 
+            var course1 = new Course("Programming", "Computing", "Oby Islam");
+            var course2 = new Course("Data Structures", "Computer Science", "John Smith");
+
+
+
+
+            student1.Courses.Add(course1);
+            student1.Courses.Add(course2);
+            student2.Courses.Add(course2);
+            context.Students.AddRange(student1, student2);
+            context.Courses.AddRange(course1, course2);
 
             context.SaveChanges();
         }

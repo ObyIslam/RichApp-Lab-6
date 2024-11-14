@@ -5,7 +5,7 @@
 namespace Student_MVC_App.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class intialcreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,9 +16,9 @@ namespace Student_MVC_App.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(type: "TEXT", nullable: false),
-                    DepartmentName = table.Column<string>(type: "TEXT", nullable: false),
-                    Lecturer = table.Column<string>(type: "TEXT", nullable: false)
+                    Name = table.Column<string>(type: "TEXT", maxLength: 150, nullable: false),
+                    DepartmentName = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    Lecturer = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -31,9 +31,9 @@ namespace Student_MVC_App.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(type: "TEXT", nullable: false),
+                    Name = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
                     Age = table.Column<int>(type: "INTEGER", nullable: false),
-                    Emailaddress = table.Column<string>(type: "TEXT", nullable: false)
+                    Emailaddress = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -68,6 +68,12 @@ namespace Student_MVC_App.Migrations
                 name: "IX_CourseStudent_StudentsId",
                 table: "CourseStudent",
                 column: "StudentsId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Students_Emailaddress",
+                table: "Students",
+                column: "Emailaddress",
+                unique: true);
         }
 
         /// <inheritdoc />

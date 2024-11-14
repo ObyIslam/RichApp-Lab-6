@@ -13,6 +13,6 @@ namespace Student_Console_App
     {
         public DbSet<Student> Students { get; set; }
         public DbSet<Course> Courses { get; set; }
-        protected override void OnConfiguring(DbContextOptionsBuilder options) => options.UseSqlite($"Data Source=C:\\Users\\obyis\\students.db");
+        protected override void OnConfiguring(DbContextOptionsBuilder options) => options.UseSqlite($"Data Source=C:\\Users\\S00235259\\students.db");
     }
 }

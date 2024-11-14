@@ -3,15 +3,15 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Student_MVC_App;
+using Student_Console_App;
 
 #nullable disable
 
-namespace Student_MVC_App.Migrations
+namespace Student_Console_App.Migrations
 {
-    [DbContext(typeof(RazorDB))]
-    [Migration("20241109152908_InitialCreate")]
-    partial class InitialCreate
+    [DbContext(typeof(MyDbContext))]
+    [Migration("20241114123544_intialcreate")]
+    partial class intialcreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

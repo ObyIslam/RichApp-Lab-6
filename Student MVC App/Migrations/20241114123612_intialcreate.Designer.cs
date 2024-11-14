@@ -10,8 +10,8 @@ using Student_MVC_App;
 namespace Student_MVC_App.Migrations
 {
     [DbContext(typeof(RazorDB))]
-    [Migration("20241109153307_AddSeedData")]
-    partial class AddSeedData
+    [Migration("20241114123612_intialcreate")]
+    partial class intialcreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
